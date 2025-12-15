@@ -8,7 +8,7 @@ const Card = ({
   shadow = 'md',
   ...props 
 }) => {
-  const baseStyles = 'bg-white rounded-2xl border border-gray-200 transition-all duration-500';
+  const baseStyles = 'bg-white border border-gray-200 transition-all duration-500';
   
   const hoverStyles = hover ? 'hover-lift' : '';
   
