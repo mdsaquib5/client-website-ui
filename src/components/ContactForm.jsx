@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Badge, Button, Card } from './common';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -34,11 +35,11 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="bg-white rounded-2xl shadow-xl p-8 md:p-10 border border-gray-200">
+    <Card shadow="lg" padding="lg">
       <div className="mb-10">
-        <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-full border border-blue-200 mb-4">
-          <span className="text-sm font-semibold text-blue-700">GET IN TOUCH</span>
-        </div>
+        <Badge variant="primary" className="mb-4">
+          GET IN TOUCH
+        </Badge>
         <h3 className="text-3xl font-bold text-gray-900 mb-4">
           Let's Start Your <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Project</span>
         </h3>
@@ -159,17 +160,19 @@ const ContactForm = () => {
         </div>
 
         {/* Submit Button */}
-        <button
+        <Button
           type="submit"
-          className="w-full py-4 cursor-pointer bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-xl hover:shadow-xl hover:shadow-blue-500/30 transition-all duration-300 hover:-translate-y-0.5 btn-shine group"
-        >
-          <span className="flex items-center justify-center space-x-3">
-            <span className="text-lg">Send Message</span>
-            <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          variant="primary"
+          size="lg"
+          className="w-full btn-shine"
+          icon={
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
-          </span>
-        </button>
+          }
+        >
+          Send Message
+        </Button>
 
         {/* Privacy Note */}
         <div className="text-center pt-4">
@@ -182,7 +185,7 @@ const ContactForm = () => {
           </p>
         </div>
       </form>
-    </div>
+    </Card>
   );
 };
 

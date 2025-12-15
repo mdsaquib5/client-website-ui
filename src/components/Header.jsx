@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { Button } from './common';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -62,9 +63,13 @@ const Navbar = () => {
                 )}
               </Link>
             ))}
-            <button className="ml-4 px-6 py-2.5 bg-gradient-to-r cursor-pointer from-blue-600 to-indigo-600 text-white font-semibold rounded-lg hover:shadow-xl hover:shadow-blue-500/30 transition-all duration-300 hover:-translate-y-0.5">
+            <Button
+              variant="primary"
+              size="sm"
+              className="ml-4 rounded-lg"
+            >
               Get Started
-            </button>
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -105,9 +110,13 @@ const Navbar = () => {
                   {link.name}
                 </Link>
               ))}
-              <button className="w-full px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300 mt-2">
+              <Button
+                variant="primary"
+                size="md"
+                className="w-full mt-2 rounded-lg"
+              >
                 Get Started
-              </button>
+              </Button>
             </div>
           </div>
         )}

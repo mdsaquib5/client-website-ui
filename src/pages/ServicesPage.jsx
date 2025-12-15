@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Badge, Button, Card, SectionHeader } from '../components/common';
 
 const ServicesPage = () => {
   const allServices = [
@@ -110,19 +111,12 @@ const ServicesPage = () => {
   return (
     <main className="py-16 bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-4 lg:px-8">
-        {/* Page Header */}
-        <div className="text-center mb-16 animate-fade-in-up">
-          <div className="inline-flex items-center px-6 py-2.5 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-full border border-blue-200 mb-6">
-            <span className="text-sm font-semibold text-blue-700">SERVICES & PRICING</span>
-          </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-gray-900">
-            Our <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Comprehensive</span> Services
-          </h1>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Choose from our premium range of digital solutions designed to elevate your business. 
-            Transparent pricing, exceptional quality, and measurable results.
-          </p>
-        </div>
+        <SectionHeader
+          badge="SERVICES & PRICING"
+          title="Our Comprehensive Services"
+          highlight="Comprehensive"
+          description="Choose from our premium range of digital solutions designed to elevate your business. Transparent pricing, exceptional quality, and measurable results."
+        />
 
         {/* Services Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
@@ -190,34 +184,39 @@ const ServicesPage = () => {
               </div>
 
               {/* CTA Button */}
-              <button className="w-full py-3.5 cursor-pointer bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-xl hover:shadow-xl hover:shadow-blue-500/30 transition-all duration-300 group-hover:-translate-y-0.5 btn-shine">
+              <Button
+                variant="primary"
+                className="w-full btn-shine"
+              >
                 Select This Plan
-              </button>
+              </Button>
             </div>
           ))}
         </div>
 
         {/* Comparison CTA */}
-        <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-3xl p-8 md:p-12 text-center border border-blue-200 mb-16">
+        <Card
+          className="bg-gradient-to-r from-blue-50 to-indigo-50 text-center border-blue-200 mb-16"
+          padding="lg"
+        >
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
             Need a <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Custom Solution</span>?
           </h2>
           <p className="text-lg text-gray-600 mb-10 max-w-2xl mx-auto">
-            Every business is unique. Contact us for a tailored package that fits your specific 
+            Every business is unique. Contact us for a tailored package that fits your specific
             requirements, timeline, and budget perfectly.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              to="/contact"
-              className="px-10 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-xl hover:shadow-xl hover:shadow-blue-500/30 transition-all duration-300 hover:-translate-y-0.5"
-            >
-              Get Custom Quote
+            <Link to="/contact">
+              <Button variant="primary" size="lg">
+                Get Custom Quote
+              </Button>
             </Link>
-            <button className="px-10 py-4 cursor-pointer bg-white border-2 border-gray-300 text-gray-700 font-semibold rounded-xl hover:border-blue-500 hover:text-blue-600 transition-all duration-300 hover:-translate-y-0.5">
+            <Button variant="secondary" size="lg">
               Schedule Discovery Call
-            </button>
+            </Button>
           </div>
-        </div>
+        </Card>
 
         {/* FAQ Section */}
         <div className="max-w-4xl mx-auto">
